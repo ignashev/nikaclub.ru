@@ -1,4 +1,10 @@
 NikaclubRu::Application.routes.draw do
+  get "pages/contacts"
+
+  get "pages/hot"
+
+  get "pages/directions"
+
   get "home/index"
 
   root :to => "home#index"
