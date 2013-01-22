@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NikaclubRu</title>
+  <title><%= title%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="description" content="<%=@description%>">
+  <meta name="keywords" content="<%=@keywords%>">
 </head>
 <body>
 <div id="mainBox">
 	<div id="header">
 		<div id="logo"></div>
 		<div id="header_pre_text">Агентство путешествий</div>
-		<div id="header_text">Клуб НИКА</div>
+		<div id="header_text"><a href="/">Клуб НИКА</a></div>
 		<div id="address_block">
 			<div id="header_phone">Звоните: <span class="phone">(843) 203-57-58</span></div>
 			<div id="header_address">Ждем Вас: <span class="address">Казань, ул. Декабристов, 156, оф. 16</></div>
@@ -20,15 +22,19 @@
 	</div>
 	<div id="left_menu">
 		<ul class="menu">
-			<li class="menuitem"><%=link_to_unless_current "Горящие туры", :controller => "pages", :action => "hot"%></li>
+			<li class="menuitem"><%=link_to_unless_current "Главная", :controller => "home", :action => "index"%></li>
 			<li class="menuitem"><%=link_to_unless_current "Как нас найти", :controller => "pages", :action => "contacts"%></li>
 		</ul>
 			
 	</div>
-	<div id="main_page"><%= yield %></div>
+	<div id="main_page">
+		<div id="pagefield">
+			<%= yield %>
+		</div>
+	</div>
 	
 	<div id="footer">
-		Все права защищены
+		&copy; Все права защищены 2013
 	</div>
 </div>
 
