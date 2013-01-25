@@ -4,6 +4,8 @@ NikaclubRu::Application.routes.draw do
   get "pages/hot"
 
   get "pages/directions"
+  
+  get "pages/aviatickets"
 
   get "home/index"
 
